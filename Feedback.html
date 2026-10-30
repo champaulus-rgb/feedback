@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/Joseph/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bucky Brotherhood</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap');
+  :root { --neon:#c7ff72; --green:#8cff57; --muted:#a5a5a5; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; min-height:100vh; color:#f4f4f4; background:#030403; font-family:'Share Tech Mono',monospace; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:5; opacity:.11; background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.12) 3px,transparent 4px); mix-blend-mode:screen; }
+  .page { width:min(100% - 32px, 900px); margin:auto; padding:34px 0 70px; text-align:center; }
+  .glitch { position:relative; display:inline-block; color:#e8ffe0; font-family:'Special Elite',monospace; font-weight:bold; letter-spacing:2px; text-transform:uppercase; text-shadow:0 0 4px #fff,0 0 9px var(--neon),0 0 22px #8aff70; }
+  h1 { margin:0 auto 42px; font-size:clamp(1.35rem,4vw,2.25rem); }
+  .thorn-wrap { width:min(620px,90%); margin:0 auto 30px; filter:drop-shadow(0 0 10px rgba(158,255,94,.55)); }
+  .thorn-wrap svg { width:100%; height:auto; overflow:visible; }
+  .join-row { display:flex; align-items:center; justify-content:center; gap:30px; margin:12px 0 22px; }
+  .discord { display:flex; flex-direction:column; align-items:center; gap:7px; color:var(--neon); text-decoration:none; font-weight:bold; font-size:14px; }
+  .discord-icon { width:48px; height:48px; border-radius:50%; display:grid; place-items:center; background:var(--neon); color:#050805; font-size:25px; box-shadow:0 0 18px #a8ff60; transition:.2s; }
+  .discord:hover .discord-icon { transform:scale(1.09); box-shadow:0 0 28px #c8ff72; }
+  .needs { font-size:clamp(1.2rem,4vw,2rem); }
+  .hero-art { width:min(360px,78vw); height:260px; margin:28px auto 24px; position:relative; display:grid; place-items:center; }
+  .figure { width:205px; height:225px; position:relative; filter:grayscale(1); }
+  .head { position:absolute; width:110px; height:130px; border-radius:48% 48% 42% 42%; background:radial-gradient(ellipse at 60% 30%,#777 0 8%,#292929 44%,#080808 75%); top:10px; left:58px; transform:rotate(-8deg); box-shadow:inset -12px -8px 15px #000; }
+  .head::after { content:""; position:absolute; width:115px; height:75px; top:65px; left:-7px; background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.22) 2px 3px); opacity:.55; }
+  .body-shape { position:absolute; width:155px; height:105px; bottom:0; left:28px; border-radius:45% 45% 0 0; background:linear-gradient(110deg,#eee,#777 42%,#111 75%); clip-path:polygon(20% 0,80% 0,100% 100%,0 100%); }
+  .arm { position:absolute; z-index:2; width:130px; height:53px; left:-3px; top:125px; background:linear-gradient(150deg,#fff,#aaa 55%,#444); border-radius:35px 55% 35% 35%; transform:rotate(-28deg); box-shadow:0 2px 12px #aaa; }
+  .arm::after { content:""; position:absolute; width:36px; height:78px; left:38px; top:-53px; border-radius:20px 20px 10px 10px; background:linear-gradient(90deg,#eee,#aaa); transform:rotate(-12deg); }
+  .finger { position:absolute; z-index:3; width:26px; height:85px; top:80px; left:59px; border-radius:20px; background:linear-gradient(90deg,#fff,#aaa); transform:rotate(-16deg); box-shadow:0 0 7px #aaa; }
+  .google-form-wrap { width:min(640px,100%); margin:0 auto; overflow:hidden; border-radius:5px; background:#fff; box-shadow:0 0 18px rgba(155,255,91,.12); }
+  .google-form-wrap iframe { display:block; width:100%; height:1100px; border:0; background:#fff; }
+  .form-head { background:#f8f8f8; border-top:5px solid #466b35; border-radius:4px 4px 0 0; padding:13px 16px; }
+  .form-head h2 { margin:0 0 6px; font: bold 17px Arial,sans-serif; color:#111; text-transform:uppercase; }
+  .form-head p { margin:0; color:#666; font-size:11px; }
+  .form-section { background:#fff; border-top:1px solid #ddd; padding:14px 16px; margin-bottom:5px; border-radius:3px; }
+  .form-section label.question { display:block; margin-bottom:12px; font-weight:600; }
+  .form-section input[type=text], .form-section input[type=email], .form-section textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:3px; font:13px Arial,sans-serif; }
+  .form-section textarea { min-height:75px; resize:vertical; }
+  .choice { display:block; margin:9px 0; color:#333; }
+  .choice input { margin-right:7px; accent-color:#507b39; }
+  .submit { display:block; margin:12px 0 0 auto; padding:11px 20px; border:0; border-radius:3px; background:#bfff70; color:#10150a; font-weight:bold; cursor:pointer; }
+  .submit:hover { background:#d5ff9e; }
+  .footer { color:#555; font-size:11px; margin-top:35px; letter-spacing:1px; }
+  @media(max-width:520px) { .page{padding-top:28px}.join-row{gap:22px}.hero-art{height:225px}.figure{transform:scale(.88)} }
+</style>
+<style id="__web-inspector-hide-shortcut-style__">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *
+{
+    visibility: hidden !important;
+}
+</style></head>
+<body>
+<main class="page">
+  <h1 class="glitch">Sandwich</h1>
+
+  <div class="thorn-wrap" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Bottom bread -->
+  <path fill="#E19747" d="
+    M55 314 L55 348 L61 357 L248 464
+    Q258 470 269 462 L451 356 L456 348
+    L455 315 L428 329 L419 351 L410 364
+    L385 385 L346 398 L312 396 L267 422
+    L251 424 L239 420 L199 396 L165 398
+    L126 385 L101 364 L92 351 L84 330 Z"></path>
+
+  <!-- Tomato left -->
+  <path fill="#F8312F" d="
+    M85 324 Q89 340 99 358 L125 382
+    L144 391 L165 396 L191 396 L215 390
+    L196 365 L184 363 L163 366 L144 362
+    L130 354 L107 326 Z"></path>
+
+  <!-- Tomato right -->
+  <path fill="#F8312F" d="
+    M426 324 L406 325 L386 350 L367 362
+    L348 366 L328 363 L314 366 L296 390
+    L320 396 L346 396 L367 391 L386 382
+    L412 358 L422 340 Z"></path>
+
+  <!-- Lettuce -->
+  <path fill="#44911B" d="
+    M33 260 Q33 290 44 302 L56 313
+    L75 321 L106 323 L132 353 L145 360
+    L163 364 L194 362 L205 371 L219 391
+    L231 399 L247 404 L264 404 L284 397
+    L300 383 L307 370 L317 362 L348 364
+    L373 357 L383 350 L396 331 L408 322
+    L431 322 L452 315 L468 301 L478 276
+    L478 258 L473 242 L464 229 L453 221
+    L448 226 L457 235 L457 246 L451 254
+    L273 357 L254 362 L236 356 L60 254
+    L53 242 L56 231 L64 225 L58 221
+    L41 237 Z"></path>
+
+  <!-- Cheese -->
+  <path fill="#FCD53F" d="
+    M55 239 Q55 253 62 253 L235 353
+    L254 360 L266 358 L447 254 L455 245
+    L453 232 L444 227 L276 325 L261 331
+    L250 331 L237 326 L67 227 L61 229 Z"></path>
+
+  <!-- Upper bread side -->
+  <path fill="#E19747" d="
+    M55 174 L55 213 L58 219 L250 329
+    Q260 335 270 326 L448 223 L456 214
+    L456 174 L451 181 L273 284 L263 288
+    L248 288 L59 180 Z"></path>
+
+  <!-- Top bread -->
+  <path fill="#FEEFC2" d="
+    M55 165 Q55 155 61 155
+    L241 51 Q256 44 274 53
+    L447 153 Q460 160 456 169
+    Q455 176 447 181
+    L263 286 Q256 290 249 286
+    L58 176 Q52 170 55 165 Z"></path>
+
+  <!-- Bottom visible bread center -->
+  <path fill="#FEEFC2" d="
+    M202 396 L238 417 Q252 425 267 420
+    L309 396 L295 391 L283 400
+    L265 406 L238 404 L216 391 Z"></path>
+</svg>
+  </div>
+
+  <div class="join-row">
+    
+    <div class="needs glitch">give us the feedback</div>
+  </div>
+
+  
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="498" height="337" viewBox="0 0 498 337">
+
+  <image x="0" y="0" width="498" height="337" xlink:href="elmo-i-need-you.gif"></image>
+
+</svg>
+
+
+
+  <section class="google-form-wrap" aria-label="Bucky Brotherhood recruitment form">
+    <iframe src="./Feedback_files/viewform.html" title="Bucky Brotherhood Enlistment Google Form" loading="lazy">
+      Loading the recruitment form…
+    </iframe>
+  </section>
+  <p class="footer">Thank you for your feedback</p>
+</main>
+
+
+</body></html>
